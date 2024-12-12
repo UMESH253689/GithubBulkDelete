@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Manager",
+  "version": "1.0",
+  "description": "Manage and delete chat items from a web chat interface.",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Chat Manager"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"], 
+      "js": ["content.js"]
+    }
+  ]
+}
